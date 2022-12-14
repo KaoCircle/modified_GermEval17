@@ -71,10 +71,12 @@ def rewrite_xml(path, filename):
 def main():
     """
     read the xml format of GermEval 2017 dataset and fix the following question:
-    1.
-    2.
-    3.
-    a modified version will be saved with prefix 'fixed_' + original filename
+    1.There are some incomplete tags. Remove it completely and fill with null tag if needed.
+    2.Change mispelled polarity to correct spelling
+    3.Some target terms are inconsistent with their offset, correct and find the first match.
+      Repetition of the same word is recorded in lef-to-right order. Dia-testset has 'to2' attribute
+      which will be handled differently.
+    A modified version will be saved with prefix 'fixed_' + original filename
     """
 
     target_dir = "./data/"
